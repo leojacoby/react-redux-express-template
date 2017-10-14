@@ -1,13 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import Title from '../components/Title';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from '../components/Home';
+import NewEvent from '../components/NewEvent';
 
-const AppContainer = ({ name }) => {
+const AppContainer = () => {
     return (
-        <div>
-            <Title name={name} />
-        </div>
+        <Router>
+            <div>
+                <Route exact path="/" component={Home} />
+                <Route path="/newevent" component={NewEvent} />
+            </div>
+        </Router>
     );
 };
 
